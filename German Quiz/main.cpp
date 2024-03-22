@@ -244,7 +244,7 @@ int main() {
 	case 2: //own choice
 		cout << "How many words would you like to learn?\n";
 		cin >> executionAmmount;
-		cout << "Enter word in English and then its translation to German:\n";
+		cout << "\nEnter word in English and then its translation to German:\n";
 		for (int i = 0; i < executionAmmount; i++) {
 			cin >> arrOwnEng[i] >> arrOwnGer[i];
 		}
@@ -266,12 +266,14 @@ int main() {
 				break;
 			}
 			else if (answer == 'o') {
-				cout << "Enter word in English and then its translation to German:\n";
+				cout << "How many words would you like to learn?\n";
+				cin >> executionAmmount;
+				cout << "\nEnter word in English and then its translation to German:\n";
 				for (int i = 0; i < executionAmmount; i++) {
 					cin >> arrOwnEng[i] >> arrOwnGer[i];
 				}
 				cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-				for (int i = 0; i < 10; i++) {
+				for (int i = 0; i < executionAmmount; i++) {
 					engToGer(arrOwnEng[i], arrOwnGer[i]);
 				}
 			}
