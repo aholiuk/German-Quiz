@@ -20,15 +20,13 @@ int engToGer(string eng, string ger) {
 
 //this function repeats learning or exits the program
 int repeatLearningPremade(string arrEng[], string arrGer[], int i, int iii) {
-	i = 0;
-	iii = i + 10;
 	for (; ; ) {
 		cout << "Would you like to repeat (y) or exit learning(n)?\n";
 		char answer;
 		cin >> answer;
 		cout << "\n\n\n";
 		if (answer == 'y') {
-			for (i = 0; i < iii; i++) {
+			for (i ; i < iii; i++) {
 				engToGer(arrEng[i], arrGer[i]);
 			}
 		}
@@ -40,12 +38,18 @@ int repeatLearningPremade(string arrEng[], string arrGer[], int i, int iii) {
 }
 
 int main() {
+	const int SIZE = 50;
 	int difLvl;
 	int wrdKind;
 	int program;
+	int executionAmmount;
+	int i = 0;
+	int minforty = SIZE - 40;
+	int minthirty = SIZE - 30;
+	int mintwenty = SIZE - 20;
+	int minten = SIZE - 10;
 	string arrOwnEng[10];
 	string arrOwnGer[10];
-	const int SIZE = 50;
 	string arrEngVerb[SIZE]{
 		//a1 0-10
 		"to be", "to do", "to eat", "to sleep", "to run", "to have", "can", "to see", "to sing", "to become",
@@ -94,9 +98,7 @@ int main() {
 		//c1 40-50
 		"eSucht", "eUeberrest", "eFacette", "eVerzoegerung", "eSegeltoern", "sEntgelt", "rRuhm", "rFluegel", "rBezirk", "rHandlungsstrang"
 	};
-	int executionAmmount;
-	int i = 0;
-	int iii = i + 10;
+
 
 	cout << "Would you like to study pre-made program or write your own?\n" << " 1. Pre-made\n 2. Own\n";
 	cin >> program;
@@ -113,19 +115,18 @@ int main() {
 			switch (wrdKind) {
 
 			case 1: //verbs
-				for (i = 0; i < iii; i++) {
+				for ( ; i < minforty; i++) {
 					engToGer(arrEngVerb[i], arrGerVerb[i]);
 				}
-				i = 0;
-				repeatLearningPremade(arrEngVerb, arrGerVerb, i, iii);
+				repeatLearningPremade(arrEngVerb, arrGerVerb, i, minforty);
 				break;
 
 			case 2: //nouns
-				for (i = 0; i < iii; i++) {
+				for ( ; i < minforty; i++) {
 					engToGer(arrEngNoun[i], arrGerNoun[i]);
 				}
 				
-				repeatLearningPremade(arrEngNoun, arrGerNoun, i, iii);
+				repeatLearningPremade(arrEngNoun, arrGerNoun, i, minforty);
 				break;
 
 			default:
@@ -141,17 +142,17 @@ int main() {
 			switch (wrdKind) {
 
 			case 1: //verbs
-				for (i = 10; i < iii; i++) {
+				for (i = 10; i < minthirty; i++) {
 					engToGer(arrEngVerb[i], arrGerVerb[i]);
 				}
-				repeatLearningPremade(arrEngVerb, arrGerVerb, i, iii);
+				repeatLearningPremade(arrEngVerb, arrGerVerb, i=10, minthirty);
 				break;
 
 			case 2: //nouns
-				for (i = 10; i < iii; i++) {
+				for (i = 10; i < minthirty; i++) {
 					engToGer(arrEngNoun[i], arrGerNoun[i]);
 				}
-				repeatLearningPremade(arrEngNoun, arrGerNoun, i, iii);
+				repeatLearningPremade(arrEngNoun, arrGerNoun, i=10, minthirty);
 				break;
 
 			default:
@@ -166,17 +167,17 @@ int main() {
 			switch (wrdKind) {
 
 			case 1: //verbs
-				for (i = 20; i < iii; i++) {
+				for (i = 20; i < mintwenty; i++) {
 					engToGer(arrEngVerb[i], arrGerVerb[i]);
 				}
-				repeatLearningPremade(arrEngVerb, arrGerVerb, i, iii);
+				repeatLearningPremade(arrEngVerb, arrGerVerb, i=20, mintwenty);
 				break;
 
 			case 2: //nouns
-				for (i = 20; i < iii; i++) {
+				for (i = 20; i < mintwenty; i++) {
 					engToGer(arrEngNoun[i], arrGerNoun[i]);
 				}
-				repeatLearningPremade(arrEngNoun, arrGerNoun, i, iii);
+				repeatLearningPremade(arrEngNoun, arrGerNoun, i=20, mintwenty);
 				break;
 
 			default:
@@ -191,17 +192,17 @@ int main() {
 			switch (wrdKind) {
 
 			case 1: //verbs
-				for (i = 30; i < iii; i++) {
+				for (i = 30; i < minten; i++) {
 					engToGer(arrEngVerb[i], arrGerVerb[i]);
 				}
-				repeatLearningPremade(arrEngVerb, arrGerVerb, i, iii);
+				repeatLearningPremade(arrEngVerb, arrGerVerb, i=30, minten);
 				break;
 
 			case 2: //nouns
-				for (i = 30; i < iii; i++) {
+				for (i = 30; i < minten; i++) {
 					engToGer(arrEngNoun[i], arrGerNoun[i]);
 				}
-				repeatLearningPremade(arrEngNoun, arrGerNoun, i, iii);
+				repeatLearningPremade(arrEngNoun, arrGerNoun, i=30, minten);
 				break;
 
 			default:
@@ -216,17 +217,17 @@ int main() {
 			switch (wrdKind) {
 
 			case 1: //verbs
-				for (i = 40; i < iii; i++) {
+				for (i = 40; i < SIZE; i++) {
 					engToGer(arrEngVerb[i], arrGerVerb[i]);
 				}
-				repeatLearningPremade(arrEngNoun, arrGerNoun, i, iii);
+				repeatLearningPremade(arrEngNoun, arrGerNoun, i=40, SIZE);
 				break;
 
 			case 2: //nouns
-				for (i = 40; i < iii; i++) {
+				for (i = 40; i < SIZE; i++) {
 					engToGer(arrEngNoun[i], arrGerNoun[i]);
 				}
-				repeatLearningPremade(arrEngNoun, arrGerNoun, i, iii);
+				repeatLearningPremade(arrEngNoun, arrGerNoun, i=40, SIZE);
 				break;
 
 			default:
